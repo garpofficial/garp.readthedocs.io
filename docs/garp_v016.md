@@ -82,7 +82,7 @@ The case is successful when the GARP protocol returns game related data
         "sessionId": "2pfwp-ZXFp3-Krun0-rc17Y-NO5Jg",
         "gameId": "8",
         "wage": "1",
-        "currency": "ATH",
+        "currency": "ATH|ETHO",
         "player1": "6",
         "player2": "3",
         "player3": "1",
@@ -96,7 +96,7 @@ The case is successful when the GARP protocol returns game related data
 and also game related information like:
 
     wage:   Mandated wage value
-    currency: Notification of the currency
+    currency: String of supported currencies seperated by '|'
     scheme: How much of the pot is distributed to the payers
     player1... player5: Distribution between players  
 
