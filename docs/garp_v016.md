@@ -172,6 +172,8 @@ In case of a user / password mismatch:
 ## AccountDetailsRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
+<button type="button" class="btn btn-primary">0.1.5</button>
+<button type="button" class="btn btn-secondary">0.1.6</button>
 
 ### Functionality:  
 After validation the user id is available and more information can be requested.
@@ -192,12 +194,12 @@ The successful response is rendered according to the following:
 
     {
       "@class" : ".AccountDetailsResponse",
-      "value" : 163,
-      "currency" : "ATH",
+      "value" : ["163", "25"],
+      "currency" : ["ATH","ETHO"],
       "requestId" : "1590221675618_2"
     }   
      
-The response provides essential information for the game as value of available currency.
+The response provides essential information how much value of currencies is available.
 This amount needs to be checked when the user makes a wage.
 
 ### Error cases:  
