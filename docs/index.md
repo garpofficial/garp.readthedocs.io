@@ -42,7 +42,7 @@ Then there will be a staging server which will contain the next version of the
 framework. Once the version is deemed to be production, we will switch that version 
 over. The staging server will be called wss-test.garp.io.
 
-The next version of the SW will be called 0.1.6 and is under construction.
+The next version of the SW will be called v0.2.0 and is under construction.
 
 * [GARP V0.1.4](/en/latest/api/garp_v014/)    
 * [GARP V0.1.5](/en/latest/api/garp_v015/)    
