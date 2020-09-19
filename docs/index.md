@@ -46,5 +46,5 @@ The next version of the SW will be called 0.1.6 and is under construction.
 
 * [GARP V0.1.4](/en/latest/api/garp_v014/)    
 * [GARP V0.1.5](/en/latest/api/garp_v015/)    
-* [GARP V0.1.6](/en/latest/api/garp_v016/)    
+* [GARP V0.2.0](/en/latest/api/garp_v020/)    
 
