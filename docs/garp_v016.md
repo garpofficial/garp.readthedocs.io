@@ -18,6 +18,15 @@ The following picture provides a functional relation of request and responses.
 In the next paragraph we will use 
 
     <WHATEVER> as a place holder for WHATEVER    
+    
+The availability paragraph indicated when a message has been introduced (first entry) and when it has been
+updated (2nd and following entries).
+
+<button type="button" class="btn btn-primary">0.1.4</button>
+<button type="button" class="btn btn-primary">0.1.6</button>
+
+means then introduced in 0.1.4 and updated in 0.1.6.
+
 ## AuthenticatedConnectRequest
 ### Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
@@ -358,32 +367,37 @@ The successful response is rendered according to the following:
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
     	"requestId": "1590265383100_5",
     	"totalGames": 31,
-    	"inPlay": 3,
+    	"inPlayATH": 2,
+    	"inPlayETHO": 1,
         "currency": "ATH",
     	"timeLeft": 43636,
     	"ladder": [{
     		"position": "3",
     		"score": "2759",
-    		"displayname": "The big boss",
+    		"displayname": "DuckMyTruck",
     		"amount": "1",
+    		"currency": "ATH",
     		"date": "2020-05-23"
     	}, {
     		"position": "1",
     		"score": "4707",
     		"displayname": "DuckMyTruck",
     		"amount": "1",
+            "currency": "ATH",
     		"date": "2020-05-18"
     	}, {
     		"position": "2",
     		"score": "3541",
     		"displayname": "Lars",
     		"amount": "1",
+            "currency": "ATH",
     		"date": "2020-05-19"
     	}, {
     		"position": "3",
     		"score": "2759",
     		"displayname": "DuckMyTruck",
     		"amount": "1",
+            "currency": "ETHO",
     		"date": "2020-05-18"
     	}]
     }
