@@ -3,7 +3,6 @@ site_description: Documentation for the Game Resolution Frame Work
 theme: readthedocs
 nav:
     - 'index.md'
-    - 'garp.md'
     - 'garp_v014.md'
     - 'garp_v015.md'
     - 'garp_v016.md'
