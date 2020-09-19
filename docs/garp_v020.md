@@ -1,5 +1,4 @@
-
-# GARP V0.1.6
+# GARP V0.2.0
 
 ## Impact
 * Introduction of multi currencies into the GARP framework
@@ -23,9 +22,9 @@ The availability paragraph indicated when a message has been introduced (first e
 updated (2nd and following entries).
 
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-primary">0.1.6</button>
+<button type="button" class="btn btn-primary">0.2.0</button>
 
-means then introduced in 0.1.4 and updated in 0.1.6.
+means then introduced in 0.1.4 and updated in 0.2.0.
 
 ## AuthenticatedConnectRequest
 ### Availablility:  
@@ -66,7 +65,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
 ## GameInfoRequest
 ### Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-secondary">0.1.6</button>
+<button type="button" class="btn btn-secondary">0.2.0</button>
 
 ### Functionality:
 This function can be called after AuthenticatedConnectRequest and the 
@@ -122,7 +121,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
 ## AuthenticateUser 
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-primary">0.1.6</button>
+<button type="button" class="btn btn-primary">0.2.0</button>
 
 ### Functionality:  
 This request sends user credentials for validation by the portal.
@@ -183,7 +182,7 @@ In case of a user / password mismatch:
 ## AccountDetailsRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-secondary">0.1.6</button>
+<button type="button" class="btn btn-secondary">0.2.0</button>
 
 ### Functionality:  
 After validation the user id is available and more information can be requested.
@@ -228,7 +227,7 @@ In case the authentication is not matching:
 ## SetWageRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-secondary">0.1.6</button>
+<button type="button" class="btn btn-secondary">0.2.0</button>
 
 ### Functionality:  
 This request sets the wage and should be the trigger for game start. This will trigger
@@ -341,7 +340,7 @@ In case the playId is not set:
 ## GameLadderRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
-<button type="button" class="btn btn-secondary">0.1.6</button>
+<button type="button" class="btn btn-secondary">0.2.0</button>
 
 ### Functionality:  
 This request triggers a game ladder request. 
