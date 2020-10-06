@@ -70,7 +70,8 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
 ### Functionality:
 This function can be called after AuthenticatedConnectRequest and the 
 response provides game related information which could be displayed at the 
-login window.   
+login window. It contains game data, including how many games are currently ongoing, 
+which is a valuable teaser for Your login / registeration screen.   
 
 ### Request
 The websocket message sent has the following JSON format:
@@ -99,6 +100,7 @@ The case is successful when the GARP protocol returns game related data
         "player5": "0",
         "scheme": "0.8",
         "description": "This is the description You added in the portal for the game",
+        "ongoinggames": "3",
         "requestId": "1590177530798_1"
     }
 
@@ -106,8 +108,9 @@ and also game related information like:
 
     wage:   Mandated wage value
     currency: String of supported currencies seperated by '|'
-    scheme: How much of the pot is distributed to the payers
     player1... player5: Distribution between players  
+    scheme: How much of the pot is distributed to the payers
+    
 
 ### Error cases:  
 A single error case can occure, when the <GAMETOKENID> cannot be found.
