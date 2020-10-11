@@ -25,7 +25,7 @@ Here we focus though on the protocol itself.
 A word of warning: we are in a very early stage of API development, so there will 
 be significant changes over time.
 
-Currently we are in version 0.1.5. We are using the following definitions:
+Currently we are in version 0.2.0. We are using the following definitions:
 
 * Alpha stage: version below 0.5.0:  
 Compatibility breaking changes can happen, though we try to minimize it
@@ -42,7 +42,7 @@ Then there will be a staging server which will contain the next version of the
 framework. Once the version is deemed to be production, we will switch that version 
 over. The staging server will be called wss-test.garp.io.
 
-The next version of the SW will be called v0.2.0 and is under construction.
+The next version of the SW will be called v0.3.0 and is under construction.
 
 * [GARP V0.1.4](/en/latest/garp_v014/)    
 * [GARP V0.1.5](/en/latest/garp_v015/)    
