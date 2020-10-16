@@ -1,5 +1,10 @@
 
 # Welcome to the GARP documentation
+GARP is a game resolution protocol for Ethereum based cryptocurrencies.
+Currently we have support for the following currencies:
+
+* Atheios
+* Ether 1
 
 This page gives an overview of the available documentation using the GARP protocol.
 
