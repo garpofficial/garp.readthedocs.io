@@ -6,6 +6,13 @@ Currently we have support for the following currencies:
 * Atheios
 * Ether 1
 
+Here a list of GARP integrated games:
+
+* [List](/en/latest/links.md)    
+
+
+Games integrate GRAP API, which then call the backend.
+
 This page gives an overview of the available documentation using the GARP protocol.
 
 # The GARP protocol
