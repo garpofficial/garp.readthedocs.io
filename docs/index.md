@@ -8,7 +8,7 @@ Currently we have support for the following currencies:
 
 Here a list of GARP integrated games:
 
-* [List](/en/latest/links.md)    
+* [List](/en/latest/links)    
 
 
 Games integrate GRAP API, which then call the backend.
