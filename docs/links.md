@@ -1,7 +1,7 @@
 # GARP supported games
 
 ## Construct 3 games
-* [Carlane](https://carlane.garp.io)    
+* [Carlane](https://carlanes.garp.io)    
 * [Carlane](https://colorpath.garp.io)    
 * [Magejump](https://magejump.atheios.org)    
 
