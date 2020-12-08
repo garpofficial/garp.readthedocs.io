@@ -2,7 +2,6 @@
 
 ## Impact
 * Introduction of multi currencies into the GARP framework
-* Introduction of multiplayer commands 
       
 * New message [GameInfoRequest](#GameInfoRequest)
 
@@ -11,7 +10,7 @@ found [here](gamedev_modules/).
 
 
 ## Overview
-The following picture provides a functional relation of request and responses.
+The following picture provides a functional relation of request and responses and corresponds protocol id 3.
 
 ## Terminology
 In the next paragraph we will use 

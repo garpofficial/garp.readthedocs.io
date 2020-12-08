@@ -1,7 +1,7 @@
 
 # Construct
 Construct is a programmable game engine for HTML5 games and a good entry level into 
-gaming. The Atheios team has developed a construct 3 module which can be embedded
+gaming. The GARP team has developed a construct 3 modul which can be embedded
 into your game project. It provides a possibility to send and receive data via a websocket.
 
 The module can be found here:

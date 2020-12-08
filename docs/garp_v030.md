@@ -1,8 +1,13 @@
 # GARP V0.3.0
 
-This version is not yet released.
+This version is not yet released and corresponds protocol id 4
 
 ## Impact
+* Introduction of multiplayer functionality into the GARP framework
+      
+* New message [RoomCreateRequest](#RoomCreateRequest)
+* New message [RoomJoinRequest](#RoomJoinRequest)
+* New message [RoomChatRequest](#RoomChatRequest)
 
 Which SW modules are available can be
 found [here](gamedev_modules/). 
@@ -123,6 +128,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
 <button type="button" class="btn btn-primary">0.2.0</button>
+<button type="button" class="btn btn-primary">0.3.0</button>
 
 ### Functionality:  
 This request sends user credentials for validation by the portal.
@@ -151,6 +157,7 @@ The successful response is rendered according to the following:
       "gameId" : "27",
       "wage" : "1",
       "currency": "ATH",
+      "room": { ... },
       "requestId" : "1590177530798_1"
     }
     
@@ -224,6 +231,142 @@ In case the authentication is not matching:
     	"requestId": "1590177530798_1"
     }
     
+## Creation of a room
+Availablility:  
+<button type="button" class="btn btn-primary">0.3.0</button>
+
+### Functionality:  
+After validation the user id is available and a room can be created. This is used for
+games requiring a room with a chat functionality. The request delivers handles to
+access the room and associated chat.
+
+### Request
+The websocket message is sent with the following JSON format:
+
+    {
+        "@class": ".RoomCreateRequest",
+        "protocolId": 4,
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"userId": "1",
+    	"gameId": "4",
+    	"requestId": "1590221675618_2"
+    }
+    
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".RoomCreateRequestResponse",
+      "roomName" : "CryptoChess",
+      "roomId" : "25",
+      "roomState": "1",
+      "requestId" : "1590221675618_2"
+    }   
+     
+The response provides the created room handle.
+
+### Error cases:  
+In case no room can be created:
+
+    {
+    	"@class": ".RoomCreateRequestResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Room cannot be created."
+    	},
+    	"requestId": "1590177530798_1"
+    }
+
+## Joining of a room
+Availablility:  
+<button type="button" class="btn btn-primary">0.3.0</button>
+
+### Functionality:  
+After validation the user id is available and a room can be joined. This is 
+used for games requiring a room with a chat functionality. The request joins an 
+existing room. The k
+
+### Request
+The websocket message is sent with the following JSON format:
+
+    {
+        "@class": ".RoomJoinRequest",
+        "protocolId": 4,
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"userId": "1",
+    	"roomId": "4",
+    	"requestId": "1590221675618_2"
+    }
+    
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".RoomJoinRequestResponse",
+      "roomName" : "CryptoChess",
+      "roomId" : "25",
+      "roomState": "1",
+      "requestId" : "1590221675618_2"
+    }   
+     
+The response provides the created room handle.
+
+### Error cases:  
+In case no room can be created:
+
+    {
+    	"@class": ".RoomJoinRequestResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Room cannot be joined."
+    	},
+    	"requestId": "1590177530798_1"
+    }
+    
+## Send a chat message into a room
+Availablility:  
+<button type="button" class="btn btn-primary">0.3.0</button>
+
+### Functionality:  
+After room creation or joining a room the user can send a message 
+which is then sent to all participants in the room.
+
+### Request
+The websocket message is sent with the following JSON format:
+
+    {
+        "@class": ".SendChatRequest",
+        "protocolId": 4,
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"userId": "1",
+    	"roomId": "25"
+    	"msg": "4",
+    	"requestId": "1590221675618_2"
+    }
+    
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".SendChatRequestResponse",
+      "requestId" : "1590221675618_2"
+    }   
+     
+The response provides the created room handle.
+
+### Error cases:  
+In case no room can be created:
+
+    {
+    	"@class": ".SendChatRequestResponse",
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVO",
+    	"error": {
+    		"details": "Message cannot be sent."
+    	},
+    	"requestId": "1590221675618_2"
+    }
+    
+
     
 ## SetWageRequest
 Availablility:  
