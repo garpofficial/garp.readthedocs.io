@@ -157,12 +157,30 @@ The successful response is rendered according to the following:
       "gameId" : "27",
       "wage" : "1",
       "currency": "ATH",
-      "room": { ... },
+      "room": 
+      [
+        {
+          "roomid": "30",      
+          "roomname": "Crypto chess",
+          "roomserial": "zMiEH3CSqYsxLH5wv62r88Om4c4A0Ekq6RqK5ySOlnV7tGhrl5DpOgSNW9EVY9pE"
+        },
+        {
+          "roomid": "31",
+          "roomname": "Crypto chess",
+          "roomserial": "piG1k2JTNqim0Mp64VxpU7H5AHy1M0DPS6AgvRGBlz77EWEjl4tfhgz9kHt0iueb"
+         }
+      ],
       "requestId" : "1590177530798_1"
     }
     
+    
 The response provides essential information for the game as the display name, userId, 
 gameId and the wage to be used for the game play.
+
+The room statement contains a json with 0 up to max number of rooms associated with the game.
+If there are rooms allicated, then it contains the roomid, the roomname, and a 64bit serial 
+called roomserial.
+
 
 ### Error cases:  
 In case the api key is not matching:
