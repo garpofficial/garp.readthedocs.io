@@ -13,6 +13,7 @@ brought together via rooms.
 * New message [ResolveRoomRequest](#ResolveRoomRequest)
 
 * New message [MessageGameRequest](#MessageGameRequest)
+* New message [FinishAddonGameRequest](#FinishAddonGameRequest)
 
 Which SW modules are available can be
 found [here](gamedev_modules/). 
@@ -162,20 +163,6 @@ The successful response is rendered according to the following:
       "userId" : "3",
       "gameId" : "27",
       "wage" : "1",
-      "currency": "ATH",
-      "room": 
-      [
-        {
-          "roomid": "30",      
-          "roomname": "Crypto chess",
-          "roomserial": "zMiEH3CSqYsxLH5wv62r88Om4c4A0Ekq6RqK5ySOlnV7tGhrl5DpOgSNW9EVY9pE"
-        },
-        {
-          "roomid": "31",
-          "roomname": "Crypto chess",
-          "roomserial": "piG1k2JTNqim0Mp64VxpU7H5AHy1M0DPS6AgvRGBlz77EWEjl4tfhgz9kHt0iueb"
-         }
-      ],
       "requestId" : "1590177530798_1"
     }
     
@@ -369,6 +356,63 @@ In case the playId is not set:
     	"requestId": "1590221699845_3"
     }
 
+### FinishAddonGameRequest
+Availablility:  
+<button type="button" class="btn btn-primary">0.3.0</button>
+
+#### Functionality:  
+This request ends a game and reposts the score. This though does not add an additional score
+but rather adds to an additional score in the game periode.
+
+#### Request
+The websocket message sent jas the following JSON format:
+
+    {
+        "@class": ".FinishAddonGameRequest",
+        "protocolId": 4,
+        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+        "nrOfPlayers": 2,
+        "userIdJson": "[1,15]",
+        "playId": "364",
+        "scoreValueJson": "[3,0]",
+        "requestId": "1590304599414_8"
+    }
+#### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".FinishAddonGameResponse",
+      "authToken" : "CvZCaiXMcHVqk0uwh0b9VVOB",
+      "status" : "OK",
+      "requestId" : "1590304599414_8"
+    }     
+The response provides the reduced account value, but also the playId, which is the started 
+game. Note that the portal tracks the time for the game.
+
+
+
+#### Error cases:  
+In case the authentication is not matching:
+
+    {
+    	"@class": ".FinishAddonGameResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Authentication is failing."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+In case the playId is not set:
+
+    {
+    	"@class": ".FinishGameResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "PlayId not properly set."
+    	},
+    	"requestId": "1590221699845_3"
+    }
 
 ### GameLadderRequest
 Availablility:  
@@ -595,45 +639,60 @@ In case no room can be created:
     	"requestId": "1590177530798_1"
     }
     
-### CloseRoomRequest
+### QueryRoomRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.3.0</button>
 
 #### Functionality:  
-After room creation or joining a room the user can send a message 
-which is then sent to all participants in the room.
+This call queries if there are any rooms avilable. This is typically done when there
+is a need to offer the user rooms to join. The request can be sent the gameId is known,
+so after the #GameInfoRequest
 
 #### Request
 The websocket message is sent with the following JSON format:
 
     {
-        "@class": ".SendChatRequest",
+        "authToken": "CWBqzBJI4dhZfOrJdFPsaq1N",
+        "gameId": "15",
+        "@class": ".QueryRoomRequest",
         "protocolId": 4,
-    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
-    	"userId": "1",
-    	"roomId": "25"
-    	"msg": "4",
-    	"requestId": "1590221675618_2"
-    }
-    
+        "requestId": "1608713347512_4"
+    }    
 #### Successful case:  
-The successful response is rendered according to the following:
+The successful response renders like follows:
 
     {
-      "@class" : ".SendChatRequestResponse",
-      "requestId" : "1590221675618_2"
-    }   
-     
-The response provides the created room handle.
+        "@class": ".QueryRoomResponse",
+        "authToken": "W9oAIpgzIy5daBsdyBv204PI",
+        "room": [{
+            "roomid": "114",
+            "roomname": "Crypto chess",
+            "roommates": "1",
+            "roomseats": "2",
+            "roomserial": "SspfhHIcUfrBwcUvxJyi2iifQMNXpCiyCxOUrxJdyYeE7bENYz1rZH9etNGDHBNC"
+        }, {
+            "roomid": "115",
+            "roomname": "Crypto chess",
+            "roommates": "1",
+            "roomseats": "2",
+            "roomserial": "a1s0I1L2BGk8N5BEGX2yLszHSc6hjKhf6is6ztaK9hFvRxxFDTfqoeWh5jgRvcNh"
+        }],
+        "requestId": "1608718291759_4"
+    }
+         
+The response provides a list of rooms available for the game. for each room the roomid,
+roomname, number of people in the room and then also seats available for the room, as well as a room serial number.
+If the number of roommates is equal to the seats, the room should not be offered for joining.
+Typically You could grey out the entry.
 
 #### Error cases:  
-In case no room can be created:
+In case no room are available:
 
     {
-    	"@class": ".SendChatRequestResponse",
+    	"@class": ".QueryRoomResponse",
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVO",
     	"error": {
-    		"details": "Message cannot be sent."
+    		"details": "No rooms available."
     	},
     	"requestId": "1590221675618_2"
     }
