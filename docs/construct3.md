@@ -58,10 +58,10 @@ There are four properties to schedule:
 * testapi (boolean)
 
 The first two will be copied from the portal at game registration.
-Set local and testapi to false as in the picture.
+Set local and testapi to false as in the picture, but with Your own API key and secret as You have received it from the portal.
 
-Setting testapi to true would instead call the testapi, which typically contains the next 
-test version of the GARP api.
+![Atheios Logo](img/construct3/atheios_module.png "The Atheios logo")  
+
 
 
 
