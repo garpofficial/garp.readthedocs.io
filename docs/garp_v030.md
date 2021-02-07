@@ -11,9 +11,9 @@ brought together via rooms.
 * New message [LeaveRoomRequest](#LeaveRoomRequest)
 * New message [QueryRoomRequest](#QueryRoomRequest)
 * New message [ResolveRoomRequest](#ResolveRoomRequest)
-
 * New message [MessageGameRequest](#MessageGameRequest)
-* New message [FinishAddonGameRequest](#FinishAddonGameRequest)
+
+* Update message [GameLadderRequest](#GameLadderRequest)
 
 Which SW modules are available can be
 found [here](gamedev_modules/). 
@@ -356,68 +356,12 @@ In case the playId is not set:
     	"requestId": "1590221699845_3"
     }
 
-### FinishAddonGameRequest
-Availablility:  
-<button type="button" class="btn btn-primary">0.3.0</button>
-
-#### Functionality:  
-This request ends a game and reposts the score. This though does not add an additional score
-but rather adds to an additional score in the game periode.
-
-#### Request
-The websocket message sent jas the following JSON format:
-
-    {
-        "@class": ".FinishAddonGameRequest",
-        "protocolId": 4,
-        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
-        "nrOfPlayers": 2,
-        "userIdJson": "[1,15]",
-        "playId": "364",
-        "scoreValueJson": "[3,0]",
-        "requestId": "1590304599414_8"
-    }
-#### Successful case:  
-The successful response is rendered according to the following:
-
-    {
-      "@class" : ".FinishAddonGameResponse",
-      "authToken" : "CvZCaiXMcHVqk0uwh0b9VVOB",
-      "status" : "OK",
-      "requestId" : "1590304599414_8"
-    }     
-The response provides the reduced account value, but also the playId, which is the started 
-game. Note that the portal tracks the time for the game.
-
-
-
-#### Error cases:  
-In case the authentication is not matching:
-
-    {
-    	"@class": ".FinishAddonGameResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "Authentication is failing."
-    	},
-    	"requestId": "1590221699845_3"
-    }
-
-In case the playId is not set:
-
-    {
-    	"@class": ".FinishGameResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "PlayId not properly set."
-    	},
-    	"requestId": "1590221699845_3"
-    }
 
 ### GameLadderRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
 <button type="button" class="btn btn-secondary">0.2.0</button>
+<button type="button" class="btn btn-secondary">0.3.0</button>
 
 #### Functionality:  
 This request triggers a game ladder request. 
@@ -427,13 +371,29 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".GameLadderRequest",
-        "protocolId": 2,
+        "protocolId": 4,
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
         "userId": "1",
         "playId": "353",
         "gameId": "27",
+        "typeId":
         "requestId": "1590265383100_5"
     }        
+    
+In  version 4 the typeID has been added as optional element. The typeId specifies
+how the results for the ladder are calculated:
+
+    "typeId": "0", or if not present   
+    
+    Normal ladder calculation, every entry of game play is ranked
+    according to the score. This is used when players play in a single player mode  
+                    
+    "typeId": "1"   
+    
+    All game plays of a specific userId are added up and then ranked.              
+    This is more a tournament style, where different players would play against
+    each other
+    
         
 #### Successful case:  
 The successful response is rendered according to the following:

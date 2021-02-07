@@ -5,6 +5,13 @@ Currently we have support for the following currencies:
 
 * Atheios
 * Ether 1
+* GARPX (coming in 2021)
+
+Here is a list of languages or frameworks supporting GARP
+
+* [Construct 3](/en/latest/construct3)
+* [Javascript](/en/latest/javascript)
+* Unity (coming in 2021)
 
 Here a list of GARP integrated games:
 
