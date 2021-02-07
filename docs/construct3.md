@@ -6,11 +6,12 @@ into your game project. It provides a possibility to send and receive data via a
 
 The module can be found here:
 
-[Atheios module](https://www.construct.net/en/make-games/addons/321/atheios-blockchain-module)
+[GARP module](https://www.construct.net/en/make-games/addons/321/atheios-blockchain-module)
 
-![Atheios Logo](img/construct3/construct_module_page.jpg "The Atheios Module Page")  
+![GARP module page](img/construct3/construct_module_page.jpg "The Atheios Module Page")  
 
 Download the latest module into the local directory. Open construct 3 and goto
+
 * MENU -> VIEW -> ADDON MANAGER -> Install addon
 
 Select now the local atheios module. Construct3 needs to be restarted. Going back
