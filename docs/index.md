@@ -1,6 +1,33 @@
 
 # Welcome to the GARP documentation
+## What is GARP?
+
 GARP is a game resolution protocol for Ethereum based cryptocurrencies.
+It will allow games to offer a waged gameplay in any of the supported crypto currencies.
+It builds a bridge between game and game developers to crypto communities.
+
+This bridge is realized via the GARP API and is documented here. 
+
+## How does it work?
+Games close typically with a result or score. That score is registered and then at a selected point
+the game resolution is done and the waged coins are paid back according to a certain key.
+
+The game resolution and the redistribution of the wage currencies is done per currency and after
+a game developer defined key and consists of 3 components:
+
+- Game developer reward
+- Gamer reward (the five highest ranked players are rewarded)
+- A network fee (0%-2.5%)
+
+The first two elements are determined by the developer at game configuration on the portal.
+
+An example:
+Player 1 plays 5 games with Atheios (ATH), a player 2 plays 5 games with ETHO. The first
+ranked scores will be then rewarded. Let assume player 1 is on the first 5 places.
+The following will happen:- The developer will get for the game periode 1 ATH and 1 ETHO, the 
+remaining 4 ATH and 4 ETHO will go to the player 1 (here we assume a network fee of 0% and that 20% go to the developer)
+
+## What currencies are supported?
 Currently we have support for the following currencies:
 
 * Atheios
@@ -17,53 +44,9 @@ Here a list of GARP integrated games:
 
 * [List](/en/latest/links)    
 
-
-Games integrate GRAP API, which then call the backend.
+Game portals using GARP
+* [Atheios game portal](https://play.atheios.org)
+* [Ether-1 game portal](https://play.ether1.org)
 
 This page gives an overview of the available documentation using the GARP protocol.
-
-# The GARP protocol
-
-We have designed a game resolution protocol (GARP) on top of websocket. This 
-protocol has multiple purposes:
-
-* Game validation
-* User validation
-* Game opening and closing
-* Provision of game stats and ladder
-
-The endpoint of that protocol is wss.garp.io. From there you might be directed to other domains
-from a load distribution perspective.
-
-## The details
-The communication is done via json and can be done in any language. We have developed supporting 
-modules in order to simplify the integration. 
-
-Here we focus though on the protocol itself.
-
-A word of warning: we are in a very early stage of API development, so there will 
-be significant changes over time.
-
-Currently we are in version 0.2.0. We are using the following definitions:
-
-* Alpha stage: version below 0.5.0:  
-Compatibility breaking changes can happen, though we try to minimize it
-* Beta stage version: below 1.0.0:  
-    Smaller changes potential compatibility breaking changes are prevented.
-* Release versions like 1.x.x, 2.x.x etc:  
-    In this stage we keep compatibility. New releases are published well ahead and 
-    test pools are provided for early integration
-    
-There will be a live server which will contain the production environment which
-started with wss.garp.io.
-
-Then there will be a staging server which will contain the next version of the
-framework. Once the version is deemed to be production, we will switch that version 
-over. The staging server will be called wss-test.garp.io.
-
-The next version of the SW will be called v0.3.0 and is under construction.
-
-* [GARP V0.1.4](/en/latest/garp_v014/)    
-* [GARP V0.1.5](/en/latest/garp_v015/)    
-* [GARP V0.2.0](/en/latest/garp_v020/)    
 
