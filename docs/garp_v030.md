@@ -393,7 +393,7 @@ live nodes are delivered, otherwise 3 screnarions are provided. Use the test mod
                     
     "typeScenario": "2"   
     
-    A ladder with three game plays with to coins in play is provided
+    A ladder with three game plays with two currencies in play is provided
                     
     "typeScenario": "3"   
 
