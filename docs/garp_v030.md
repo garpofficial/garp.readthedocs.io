@@ -3,8 +3,12 @@
 This version is not yet released and corresponds protocol id 4
 
 ## Impact
-* Introduction of multiplayer functionality into the GARP framework. Multiplayers are 
-brought together via rooms. 
+Introduction of test mode for some functionality
+* Testmode for ladder: GameLadderRequest
+
+Introduction of multiplayer functionality into the GARP framework. Multiplayers are 
+brought together via rooms.
+
       
 * New message [RoomCreateRequest](#RoomCreateRequest)
 * New message [RoomJoinRequest](#RoomJoinRequest)
@@ -367,7 +371,7 @@ Availablility:
 This request triggers a game ladder request. 
 
 #### Request
-The websocket message sent jas the following JSON format:
+The websocket message sent has the following JSON format:
 
     {
         "@class": ".GameLadderRequest",
@@ -376,23 +380,24 @@ The websocket message sent jas the following JSON format:
         "userId": "1",
         "playId": "353",
         "gameId": "27",
-        "typeId":
+        "typeScenario": "1",
         "requestId": "1590265383100_5"
     }        
     
-In  version 4 the typeID has been added as optional element. The typeId specifies
-how the results for the ladder are calculated:
+In  version 4 the testScenario has been added as an optional element. If omitted data from the
+live nodes are delivered, otherwise 3 screnarions are provided. Use the test mode to verify and validate Your design.
 
-    "typeId": "0", or if not present   
+    "typeScenario": "1"   
     
-    Normal ladder calculation, every entry of game play is ranked
-    according to the score. This is used when players play in a single player mode  
+    An empty ladder is provided. No game play is simulated.
                     
-    "typeId": "1"   
+    "typeScenario": "2"   
     
-    All game plays of a specific userId are added up and then ranked.              
-    This is more a tournament style, where different players would play against
-    each other
+    A ladder with three game plays with to coins in play is provided
+                    
+    "typeScenario": "3"   
+
+    A full ladder with 25 game plays with coins in play is provided
     
         
 #### Successful case:  
