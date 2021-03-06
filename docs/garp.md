@@ -2,7 +2,15 @@
 ## What is GARP?
 GARP is a protocol providing a bridge between the gaming world and crypto currency.
 Aim is to hide the complexity of crypto to gamers and game developers but at the same time to
-open the worlds to each other.
+open the worlds to each other. On a high level it works like this:
+
+In order to play a game You wage a crypto currency coin. That coin is used for game play.
+The game play results into a high score, the high score is put into a leaderboard.
+After defined period, defined by the game developer the game is resolved, which means the
+accumulated pot of all players during the game period is then distributed to the top game players.
+This is then generating an incentive for the good players, and the not so good players to get better.
+The game developer can also decide to get a kickback from that pot.
+
 
 ## Why?
 So why is crypto relevant in the gaming context? Well it is a different way to allow moneytization,
@@ -11,6 +19,10 @@ to get a kickback for game play. The kickback is going to be in crypto currency.
 
 Why is that better then local points, gold or gems? Try to convert them to USD.
 Crypto currency You can convert to USD or EUR or bitcoin.
+
+## Is this gambling?
+No, this is about the players cleverness and capability. This is like esports, where the 
+most skilled player wins and gets a price.
 
 ## Shall I build my game on GARP only?
 We suggest no. Make a GARP version of Your game. We have developed templates for Construct 3
