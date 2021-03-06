@@ -1,5 +1,26 @@
 # The GARP protocol
+## What is GARP?
+GARP is a protocol providing a bridge between the gaming world and crypto currency.
+Aim is to hide the complexity of crypto to gamers and game developers but at the same time to
+open the worlds to each other.
 
+## Why?
+So why is crypto relevant in the gaming context? Well it is a different way to allow moneytization,
+instead of cluttering Your game with trackable cookies and advertising GARP allows You a clean way 
+to get a kickback for game play. The kickback is going to be in crypto currency.
+
+Why is that better then local points, gold or gems? Try to convert them to USD.
+Crypto currency You can convert to USD or EUR or bitcoin.
+
+## Shall I build my game on GARP only?
+We suggest no. Make a GARP version of Your game. We have developed templates for Construct 3
+and Javascript, so it should be fairly easy to convert Your game to crypto currency.
+The Crypto is an emerging market, see this as an additional possibility to generate revenue
+for Your game. Currently we support Ether-1 and Atheios which are at writing at around
+0.04 USD and 0.001 USD, but remember also bitcoin was at that level. So beside the kickback,
+You could see this as an interesting investment (note that this is no financial advise).
+
+## Now to the details
 We have designed a game resolution protocol (GARP) on top of websocket. This 
 protocol has multiple purposes:
 
