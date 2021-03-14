@@ -52,6 +52,9 @@ ranked scores will be then rewarded. Let assume player 1 is on the first 5 place
 The following will happen:- The developer will get for the game periode 1 ATH and 1 ETHO, the 
 remaining 4 ATH and 4 ETHO will go to the player 1 (here we assume a network fee of 0% and that 20% go to the developer)
 
+## Security aspects
+Checkout some security consideration [here](/en/latest/security)
+
 ## What currencies are supported?
 Currently we have support for the following currencies:
 
